@@ -1,0 +1,21 @@
+{
+    "name": "Google Pass",
+    "version": "0.1",
+    "manifest_version": 3,
+
+    "description": "Guarde sus contraseñas, llene formularios rápidamente y mantenga sus datos accesibles y seguros.",
+    "action": {
+        "default_popup": "index.html"
+    },
+    "icons": {
+        "128": "./assets/passwordManager.png"
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "tabs",
+        "scripting",
+        "clipboardWrite",
+        "clipboardRead"
+    ]
+}
