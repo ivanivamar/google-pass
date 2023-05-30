@@ -1,0 +1,431 @@
+.btn
+    border: 0
+    border-radius: 25px 25px 25px 25px
+    padding: 12px 16px
+    font-size: 16px
+    font-family: $font-family
+    font-weight: 500
+    font-size: 14px
+    line-height: 20px
+    letter-spacing: 0.1px
+    cursor: pointer
+    transition: background-color 0.2s ease
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 40px
+    min-width: 66px
+    gap: 8px
+
+    i
+        font-size: 14px
+
+    &.filled-btn
+        background-color: $primary-color
+        color: #fff
+
+        &:hover
+            background-color: $primary-color-hover
+
+        &:active
+            background-color: $primary-color-active
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+            background-color: $primary-color-disabled
+
+    &.tonal-btn
+        background-color: $secondary-color
+        color: #3B82F6
+
+        &:hover
+            background-color: $secondary-color-hover
+
+        &:active
+            background-color: $secondary-color-active
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+            background-color: $secondary-color-disabled
+
+    &.outlined-btn
+        background-color: transparent
+        border: 1px solid $primary-color
+        color: $primary-color
+
+        &:hover
+            background-color: $secondary-color-hover
+
+        &:active
+            background-color: $secondary-color-active
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+
+    &.elevated-btn
+        background-color: #fff
+        color: $primary-color
+        box-shadow: 0px 1px 3px 1px #00000026, 0px 1px 2px 0px #0000004D
+
+        &:hover
+            background-color: $secondary-color
+
+        &:active
+            background-color: $secondary-color
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+
+    &.text-btn
+        background-color: transparent
+        color: $primary-color
+
+        &:hover
+            background-color: $secondary-color
+
+        &:active
+            background-color: $secondary-color
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+
+.fab
+    border: 0
+    border-radius: 16px
+    padding: 0
+    font-size: 16px
+    font-family: $font-family
+    font-weight: 500
+    font-size: 16px
+    line-height: 20px
+    letter-spacing: 0.1px
+    cursor: pointer
+    transition: background-color 0.2s ease
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 56px
+    width: 56px
+    background-color: $primary-color
+    color: #fff
+
+    &:hover
+        background-color: $primary-color-hover
+
+    &:active
+        background-color: $primary-color-active
+
+    &:disabled
+        opacity: 0.5
+        cursor: not-allowed
+
+    i
+        font-size: 16px
+
+    &.fab-small
+        height: 40px
+        width: 40px
+
+        i
+            font-size: 14px
+
+    &.fab-large
+        height: 96px
+        width: 96px
+
+        i
+            font-size: 20px
+
+.fab-extended
+    border: 0
+    border-radius: 16px
+    padding: 0
+    font-size: 16px
+    font-family: $font-family
+    font-weight: 500
+    font-size: 16px
+    line-height: 20px
+    letter-spacing: 0.1px
+    cursor: pointer
+    transition: background-color 0.2s ease
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 56px
+    width: 168px
+    background-color: $primary-color
+    color: #fff
+    box-shadow: 0px 2px 6px 2px #00000026, 0px 1px 2px 0px #0000004D
+
+    &:hover
+        background-color: $primary-color-hover
+
+    &:active
+        background-color: $primary-color-active
+
+    &:disabled
+        opacity: 0.5
+        cursor: not-allowed
+
+    i
+        font-size: 16px
+
+.icon-btn
+    border: 0
+    border-radius: 50%
+    padding: 0
+    font-size: 16px
+    font-family: $font-family
+    font-weight: 500
+    font-size: 16px
+    line-height: 20px
+    letter-spacing: 0.1px
+    cursor: pointer
+    transition: background-color 0.2s ease
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 40px
+    width: 40px
+
+    i
+        font-size: 16px
+
+    &.filled-btn
+        background-color: $primary-color
+        color: #fff
+
+        &:hover
+            background-color: $primary-color-hover
+
+        &:active
+            background-color: $primary-color-active
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+            background-color: $primary-color-disabled
+
+    &.tonal-btn
+        background-color: $secondary-color
+        color: #3B82F6
+
+        &:hover
+            background-color: $secondary-color-hover
+
+        &:active
+            background-color: $secondary-color-active
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+            background-color: $secondary-color-disabled
+
+    &.outlined-btn
+        background-color: transparent
+        border: 1px solid $primary-color
+        color: $primary-color
+
+        &:hover
+            background-color: $secondary-color-hover
+
+        &:active
+            background-color: $secondary-color-active
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+
+    &.elevated-btn
+        background-color: #fff
+        color: $primary-color
+        box-shadow: 0px 1px 3px 1px #00000026, 0px 1px 2px 0px #0000004D
+
+        &:hover
+            background-color: $secondary-color
+
+        &:active
+            background-color: $secondary-color
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+
+    &.text-btn
+        background-color: transparent
+        color: $primary-color
+
+        &:hover
+            background-color: $secondary-color
+
+        &:active
+            background-color: $secondary-color
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+
+.icon-btn-toggle
+    border-radius: 50%
+    padding: 0
+    font-size: 16px
+    font-family: $font-family
+    font-weight: 500
+    font-size: 16px
+    line-height: 20px
+    letter-spacing: 0.1px
+    cursor: pointer
+    transition: background-color 0.2s ease
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 40px
+    width: 40px
+    background-color: #60A5FA
+    color: #1E3A8A
+
+    &:hover
+        background-color: #3B82F6
+
+    &:active
+        background-color: #3B82F6
+
+    &:disabled
+        opacity: 0.5
+        cursor: not-allowed
+
+    i
+        font-size: 16px
+
+    &.filled-btn
+        background-color: #60A5FA
+        color: #1E3A8A
+
+        &:hover
+            background-color: #3B82F6
+
+        &:active
+            background-color: #3B82F6
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+
+    &.tonal-btn
+        background-color: #182C53
+        color: #60A5FA
+
+        &:hover
+            background-color: #1D3767
+
+        &:active
+            background-color: #1D3767
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+
+    &.outlined-btn
+        background-color: transparent
+        border: 1px solid #60A5FA
+        color: #60A5FA
+
+        &:hover
+            background-color: #14223F
+
+        &:active
+            background-color: #14223F
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+
+    &.text-btn
+        background-color: transparent
+        color: #60A5FA
+
+        &:hover
+            background-color: #182C53
+
+        &:active
+            background-color: #182C53
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+
+    &.active
+        background-color: #3B82F6
+        color: #1E3A8A
+
+        &:hover
+            background-color: #3B82F6
+
+        &:active
+            background-color: #3B82F6
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+
+    &.active.filled-btn
+        background-color: #3B82F6
+        color: #1E3A8A
+
+        &:hover
+            background-color: #3B82F6
+
+        &:active
+            background-color: #3B82F6
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+
+    &.active.tonal-btn
+        background-color: #1D3767
+        color: #60A5FA
+
+        &:hover
+            background-color: #1D3767
+
+        &:active
+            background-color: #1D3767
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+
+    &.active.outlined-btn
+        background-color: #14223F
+        border: 1px solid #60A5FA
+        color: #60A5FA
+
+        &:hover
+            background-color: #14223F
+
+        &:active
+            background-color: #14223F
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+
+    &.active.text-btn
+        background-color: #182C53
+        color: #60A5FA
+
+        &:hover
+            background-color: #182C53
+
+        &:active
+            background-color: #182C53
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed

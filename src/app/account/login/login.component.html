@@ -1,0 +1,17 @@
+<div style="height: 300px;">
+    <h1>Login</h1>
+    <div>
+        <div class="form-group mb-5">
+            <m-input [(value)]="loginForm.email" [name]="'email'" [inputType]="'email'" [placeholder]="'Email'" [required]="true"
+                [icon]="'email'"></m-input>
+        </div>
+        <div class="form-group mb-5">
+            <m-input [(value)]="loginForm.password" [name]="'password'" [inputType]="'password'" [placeholder]="'Password'"
+                [required]="true" [icon]="'lock'"></m-input>
+        </div>
+        <button (click)="login()" class="btn filled-btn w-full">
+            <i class="material-symbols-outlined">login</i>
+            Login
+        </button>
+    </div>
+</div>

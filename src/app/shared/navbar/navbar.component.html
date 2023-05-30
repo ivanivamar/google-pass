@@ -1,0 +1,6 @@
+<nav>
+    <a *ngFor="let item of itemList" [routerLink]="item.link" routerLinkActive="active">
+        <i class="material-symbols-outlined">{{ item.icon }}</i>
+        <span class="fw-regular">{{ item.name }}</span>
+    </a>
+</nav>

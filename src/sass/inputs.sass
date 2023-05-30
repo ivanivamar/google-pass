@@ -1,0 +1,168 @@
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea
+    border: 2px solid #ddd
+    border-radius: 4px
+    padding: 12px 16px
+    font-size: 16px
+    font-family: 'Roboto', sans-serif
+    background-color: transparent
+    color: $text-color
+    width: 100%
+    box-sizing: border-box
+    transition: border-color 0.2s ease
+    outline: none !important
+
+    &:focus,
+    &:hover,
+    &:active
+        border-color: $primary-color
+        outline: none !important
+
+label
+    display: block
+    font-size: 16px
+    font-weight: 600
+    font-family: $font-family
+    color: $text-color
+    margin-bottom: 8px
+
+.checkbox-container
+    position: relative
+    z-index: 1
+    vertical-align: middle
+    display: flex
+    align-items: center
+    justify-content: center
+    box-sizing: border-box
+    width: 16px
+    height: 16px
+    margin: 0
+    padding: 0
+
+    input[type="checkbox"]
+        position: absolute
+        width: 0
+        height: 0
+        margin: 0
+        padding: 0
+        opacity: 0
+        -ms-appearance: none
+        -moz-appearance: none
+        -webkit-appearance: none
+        appearance: none
+        border: none
+
+    .checkbox-helper
+        position: absolute
+        top: 0
+        left: 0
+        display: inline-block
+        box-sizing: border-box
+        width: 16px
+        height: 16px
+        border-radius: 50%
+        background-color: transparent
+
+    .outline
+        position: absolute
+        top: 0
+        left: 0
+        display: inline-block
+        box-sizing: border-box
+        width: 16px
+        height: 16px
+        margin: 0
+        cursor: pointer
+        overflow: hidden
+        border: 2px solid #60A5FA
+        border-radius: 50%
+        z-index: 2
+
+        .outline-tick
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            height: 67%
+            width: 67%
+            border-radius: 50%
+            transition: all 0.2s ease
+
+    &:hover
+        .outline
+            .outline-tick
+                background: #60A5FA
+                opacity: .8
+
+    &.is-checked
+        .outline
+
+            .outline-tick
+                background: #60A5FA
+
+.custom-file[type="file"]
+    color: transparent
+    position: relative
+    cursor: pointer
+
+    &::-webkit-file-upload-button
+        display: none !important
+        visibility: hidden !important
+
+    &::before
+        content: 'Add Attachment'
+        color: $text-color
+        position: absolute
+        top: 50%
+        left: 0
+        transform: translate(2px, -50%)
+
+.p-calendar
+    width: 100%
+    border-bottom: 1px solid transparent !important
+
+    &:hover
+        border-bottom: 1px solid $text-secondary !important
+
+.p-calendar .p-inputtext
+    border: 0
+    padding: 0
+    outline: none !important
+    border-radius: 0
+
+    &:enabled:focus
+        border: 0
+        outline: none !important
+        box-shadow: none !important
+
+.p-calendar .p-datepicker-trigger
+    background-color: transparent
+    border: 0
+    color: $text-color !important
+    width: 35px !important
+
+    &:hover
+        background-color: transparent !important
+        border: 0
+        color: black !important
+
+p-calendar.p-calendar-clearable .p-calendar-clear-icon
+    right: 2.75rem !important
+
+.p-multiselect,
+.p-dropdown
+    border: 0 !important
+    outline: none !important
+    border-radius: 0 !important
+    background: transparent !important
+    box-shadow: none !important
+    border-bottom: 1px solid transparent !important
+
+    &:hover
+        border-bottom: 1px solid $text-secondary !important
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item
+    padding: 12px 24px !important
+    border-bottom: 1px solid #E9EAEE !important
