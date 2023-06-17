@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
     itemList = [
-        { name: 'Home', link: '/', icon: 'home' },
-        { name: 'generator', link: '/generator', icon: 'password' },
-        { name: 'others', link: '/others', icon: 'settings' },
+        { name: 'Home', link: '/home', icon: 'home' },
+        { name: 'Generator', link: '/generator', icon: 'password' },
+        { name: 'Settings', link: '/others', icon: 'settings' },
     ];
 }

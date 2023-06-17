@@ -1,0 +1,64 @@
+.dropdown-menu
+    position: relative
+
+    .dropbtn
+        cursor: pointer
+        font-size: 14px
+        border: none
+        outline: none
+        color: $text-color
+        display: flex
+        align-items: center
+        font-family: $font-family
+        gap: 4px
+
+        .arrow
+            transition: all 0.2s ease-in-out
+
+    .dropdown-content
+        display: none
+        position: absolute
+        top: 100%
+        left: 0
+        flex-direction: column
+        padding: 6px 0
+        background-color: #fff
+        min-width: 160px
+        border-radius: 12px
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+        z-index: 1
+
+        div
+            color: black
+            padding: 8px 16px
+            text-decoration: none !important
+            display: block
+            font-family: $font-family
+            cursor: pointer
+            border: 0 !important
+            display: flex
+            align-items: center
+            gap: 4px
+
+            i
+                font-size: 16px
+
+            &:hover
+                background-color: #eee
+                border: 0 !important
+
+            &.active
+                color: $primary-color
+                font-weight: 600
+
+        .dropdown-item-active
+            background-color: $primary-color
+            color: white
+
+    &.show
+        .dropbtn
+            .arrow
+                transform: rotate(180deg)
+
+        .dropdown-content
+            display: flex !important

@@ -1,3 +1,112 @@
+.bento-button
+    padding: 6px 18px
+    border-color: #5F6368
+    color: #252629
+    font-family: $font-family
+    font-size: 16px
+    line-height: 24px
+    font-weight: 600
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    border: none
+    border-width: 2px
+    border-style: solid
+    text-align: center
+    outline: none
+    border-radius: 4px
+    font-optical-sizing: none
+    position: relative
+    transition: all 250ms cubic-bezier(0.1, 0.1, 0, 1)
+    text-decoration: none
+
+    &::before
+        content: ""
+        position: absolute
+        height: calc(100% + 4px)
+        width: calc(100% + 4px)
+        top: -2px
+        left: -2px
+        box-shadow: 0 0 0 2px #1967d2
+        border-radius: 4px
+        opacity: 0
+        pointer-events: none
+
+    &::after
+        content: ""
+        position: absolute
+        height: calc(100% + 8px)
+        width: calc(100% + 8px)
+        top: -4px
+        left: -4px
+        box-shadow: 0 0 0 2px #8ab4f8
+        border-radius: 6px
+        opacity: 0
+        pointer-events: none
+
+    .bento-button__inner-outline
+        content: ""
+        position: absolute
+        height: calc(100% - 4px)
+        width: calc(100% - 4px)
+        top: 2px
+        left: 2px
+        box-shadow: 0 0 0 2px #fff
+        border-radius: 2px
+        opacity: 0
+        pointer-events: none
+
+    .bento-button__text
+        display: inline-flex
+        align-items: center
+        gap: 8px
+
+    &:hover
+        color: #fff
+        background-color: #5F6368
+        cursor: pointer
+
+    &.primary
+        border-color: $primary-color
+        color: $primary-color
+        background-color: transparent
+
+        &:hover
+            background-color: $primary-color-hover
+            border-color: $primary-color-hover
+            color: #fff
+
+        &:active
+            background-color: $primary-color-active
+            border-color: $primary-color-active
+            color: #fff
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+            background-color: $primary-color-disabled
+            border-color: $primary-color-disabled
+
+    &.filled
+        background-color: $primary-color
+        border-color: $primary-color
+        color: #fff
+
+        &:hover
+            background-color: $primary-color-hover
+            border-color: $primary-color-hover
+            box-shadow: 0 1px 2px rgb(66 63 63 / 30%), 0 1px 3px 1px rgb(66 63 63 / 15%)
+
+        &:active
+            background-color: $primary-color-active
+            border-color: $primary-color-active
+
+        &:disabled
+            opacity: 0.5
+            cursor: not-allowed
+            background-color: $primary-color-disabled
+            border-color: $primary-color-disabled
+
 .btn
     border: 0
     border-radius: 25px 25px 25px 25px
@@ -113,6 +222,9 @@
     width: 56px
     background-color: $primary-color
     color: #fff
+    position: absolute
+    bottom: 72px
+    right: 24px
 
     &:hover
         background-color: $primary-color-hover
@@ -161,6 +273,9 @@
     background-color: $primary-color
     color: #fff
     box-shadow: 0px 2px 6px 2px #00000026, 0px 1px 2px 0px #0000004D
+    position: absolute
+    bottom: 72px
+    right: 24px
 
     &:hover
         background-color: $primary-color-hover
@@ -257,14 +372,14 @@
             cursor: not-allowed
 
     &.text-btn
-        background-color: transparent
-        color: $primary-color
+        background-color: transparent !important
+        color: $primary-color !important
 
         &:hover
-            background-color: $secondary-color
+            background-color: $secondary-color !important
 
         &:active
-            background-color: $secondary-color
+            background-color: $secondary-color !important
 
         &:disabled
             opacity: 0.5
@@ -429,3 +544,12 @@
         &:disabled
             opacity: 0.5
             cursor: not-allowed
+
+a
+    color: $primary-color
+    text-decoration: none
+    border-bottom: 1px solid transparent
+    transition: border-bottom 0.2s ease
+
+    &:hover
+        border-bottom: 1px solid $primary-color-hover

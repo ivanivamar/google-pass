@@ -19,16 +19,18 @@ export class MInputComponent {
     @Input() maxLength: number = 0;
     @Input() required: boolean = false;
     @Input() name: string = '';
+    @Input() showPassword: boolean = false;
 
     @Output() valueChange = new EventEmitter();
 
     error: boolean = false;
     isFocused: boolean = false;
+    showingPassword: boolean = false;
 
     constructor() { }
 
     clear() {
-        this.value = '';
+        this.value = this.inputType === 'number' ? 0 : '';
         this.valueChange.emit(this.value);
     }
 
@@ -38,6 +40,25 @@ export class MInputComponent {
 
     onBlur() {
         this.isFocused = false;
+    }
+
+    isFocus(): boolean {
+        let hasValue = false;
+
+        if (this.value !== null && this.value !== undefined) {
+            hasValue = this.value.toString().trim().length > 0;
+        }
+
+        return this.isFocused || hasValue;
+    }
+
+    togglePassword() {
+        this.showingPassword = !this.showingPassword;
+        if (this.showingPassword) {
+            this.inputType = 'text';
+        } else {
+            this.inputType = 'password';
+        }
     }
 
     verifyInput() {

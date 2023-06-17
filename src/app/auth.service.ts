@@ -31,6 +31,10 @@ export class AuthService {
         return signInWithEmailAndPassword(this.auth, email, password);
     }
 
+    updateProfile(user: any) {
+        return this.auth.updateCurrentUser(user);
+    }
+
     logout() {
         return signOut(this.auth);
     }

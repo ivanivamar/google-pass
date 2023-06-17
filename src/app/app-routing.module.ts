@@ -19,6 +19,12 @@ const routes: Routes = [
     },
     {
         path: '',
+        redirectTo: 'home',
+        pathMatch: 'full',
+        ...canActivate(() => redirectUnauthorizedTo(['login'])),
+    },
+    {
+        path: 'home',
         component: HomeComponent,
         pathMatch: 'full',
         ...canActivate(() => redirectUnauthorizedTo(['login'])),

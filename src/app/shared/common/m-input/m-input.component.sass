@@ -1,17 +1,14 @@
 // Input text field:
 .input-container
     border: 0
-    border-bottom: 2px solid #64748B
-    background-color: #F8FAFC
+    border: 1px solid #ECECEC
+    background-color: #fff
     padding: 8px 12px
     display: flex
     align-items: center
     justify-content: space-between
     border-radius: 8px
-    border-bottom-left-radius: 0
-    border-bottom-right-radius: 0
     height: 32px
-    min-width: 300px
 
     &:hover
         border-color: #64748B
@@ -43,6 +40,7 @@
             transform: translateY(-50%)
             transition: all 0.2s ease-in-out
             z-index: 0
+            background-color: #fff
 
             .required-asterisk
                 color: #DC2626
@@ -61,7 +59,6 @@
             font-family: 'Readex Pro', sans-serif
             z-index: 1
             position: relative
-            top: 4px
 
             &::placeholder
                 color: #64748B
@@ -81,9 +78,10 @@
         border-color: #3B82F6
 
         .floating-label
-            transform: translateY(-24px) !important
-            font-size: 11px !important
-            color: #3B82F6 !important
+            transform: translate(-8px,-34px) !important
+            font-size: 11px!important
+            color: #3b82f6!important
+            padding: 2px
 
     &.error
         border-color: #DC2626
@@ -111,7 +109,7 @@
 
     .counter-container
         display: flex
-        justify-content: end
+        justify-content: flex-end
         align-items: center
         gap: 4px
 

@@ -17,6 +17,11 @@ import { GeneratorComponent } from './generator/generator.component';
 import { CommonModule } from '@angular/common';
 import { AccountModule } from './account/account.module';
 import { MInputComponent } from './shared/common/m-input/m-input.component';
+import { TabsComponent } from './shared/common/tabs/tabs.component';
+import { PasswordsComponent } from './home/passwords/passwords.component';
+import { PasswordModalComponent } from './home/passwords/password-modal/password-modal.component';
+import { NotesComponent } from './home/notes/notes.component';
+import { NoteModalComponent } from './home/notes/note-modal/note.modal.component';
 
 @NgModule({
     declarations: [
@@ -26,7 +31,12 @@ import { MInputComponent } from './shared/common/m-input/m-input.component';
         GeneratorComponent,
         LoginComponent,
         RegisterComponent,
-        MInputComponent
+        MInputComponent,
+        TabsComponent,
+        PasswordsComponent,
+        PasswordModalComponent,
+        NotesComponent,
+        NoteModalComponent,
     ],
     imports: [
         BrowserModule,

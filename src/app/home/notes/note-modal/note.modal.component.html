@@ -1,0 +1,52 @@
+<div class="flex flex-column h-full w-full absolute top-0 left-0 bg-white" style="z-index: 999999">
+    <header class="p-2 flex justify-content-between align-items-center" style="border-bottom: 1px solid #eee">
+        <div class="flex align-items-center gap-2">
+            <button class="icon-btn text-btn" (click)="closeModal()">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <input class="text-lg fw-bold" [(ngModel)]="note.name" placeholder="Title..." />
+        </div>
+
+        <button class="icon-btn text-btn" *ngIf="note.id" (click)="delete()">
+            <span class="material-symbols-outlined">delete</span>
+        </button>
+    </header>
+
+    <tabs [items]="notesTabs" (tabChanged)="tab = $event"></tabs>
+
+    <div class="p-3 flex flex-column gap-3 overflow-y-auto" style="min-height: 250px;">
+        <div [ngSwitch]="tab">
+            <div *ngSwitchCase="'details'">
+                <div class="textarea flex flex-column gap-2">
+                    <span class="fw-bold text-lg">Content</span>
+                    <textarea [(ngModel)]="note.content" name="content" rows="10"
+                        class="w-full h-full border-transparent p-0"></textarea>
+                </div>
+            </div>
+            <div *ngSwitchDefault>
+                <div class="dropdown-menu" [class.show]="showColors">
+                    <span class="dropbtn" (click)="showColors = !showColors">
+                        <span class="material-symbols-outlined" [style.color]="note.color">palette</span>
+                        Color
+                        <span class="material-symbols-outlined arrow">arrow_drop_down</span>
+                    </span>
+                    <div class="dropdown-content">
+                        <div [class.active]="note.color === noteColor.color"
+                            (click)="note.color = noteColor.color; showColors = false"
+                            *ngFor="let noteColor of notesColors">
+                            <div class="border-circle p-2 flex align-items-center justify-content-center"
+                                [style.backgroundColor]="noteColor.color">
+                            </div>
+                            {{ noteColor.label }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="fab-extended h-3rem w-8rem gap-2 ripple bottom-0 mb-3" (click)="save()">
+            <span class="material-symbols-outlined">save</span>
+            Save
+        </button>
+    </div>
+</div>

@@ -1,26 +1,54 @@
 $bg-color: #FFFFFF
-$bg-secondary: #F8FAFC
+$bg-secondary: #EFF6FF
 
-$primary-color: #2563EB
-$primary-color-hover: #1D4ED8
-$primary-color-active: #1D4ED8
-$primary-color-disabled: #BED1F9
+$primary-color: #1967D2
+$primary-color-hover: #195AB4
+$primary-color-active: #195AB4
+$primary-color-disabled: #E1E3E4
 
 $secondary-color: #DBEAFE
-$secondary-color-hover: #BFDBFE
-$secondary-color-active: #BFDBFE
-$secondary-color-disabled: #FAFCFF
+$secondary-color-hover: #C3DAFE
+$secondary-color-active: #C3DAFE
+$secondary-color-disabled: #E1E3E4
 
-$text-color: #1F2937
-$text-secondary: #6B7280
-
-@import 'sass/typography'
+$text-color: #3C4043
+$text-secondary: #1967D2
 $font-family: 'Product Sans Regular', sans-serif
 
+@import 'sass/typography'
 @import 'sass/inputs'
 @import 'sass/buttons'
+@import 'sass/dropdown'
 
 html
     width: 350px
     background-color: #FFFFFF
-    height: 400px
+    height: 100%
+
+.bg-primary
+    background-color: $primary-color
+
+.bg-secondary
+    background-color: $bg-secondary
+
+.bg-white
+    background-color: $bg-color
+
+.text-primary
+    color: $primary-color
+
+.text-color
+    color: $text-color
+
+/* Ripple effect */
+.ripple
+    background-position: center
+    transition: background 0.8s
+
+    &:hover
+        background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%
+
+    &:active
+        background-color: #6eb9f7
+        background-size: 100%
+        transition: background 0s

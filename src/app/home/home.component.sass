@@ -1,0 +1,36 @@
+.spinner-border
+    display: block
+    margin: 0 auto
+
+    .sr-only
+        border: 0
+        clip: rect(0, 0, 0, 0)
+        height: 1px
+        margin: -1px
+        overflow: hidden
+        padding: 0
+        position: absolute
+        width: 1px
+
+@keyframes spinner-border
+    to
+        transform: rotate(360deg)
+
+.spinner-border
+    animation: spinner-border .75s linear infinite
+    border: .25em solid currentColor
+    border-right-color: transparent
+    border-radius: 50%
+    display: inline-block
+    height: 3rem
+    width: 3rem
+    vertical-align: text-bottom
+
+.search-bar
+    padding: 12px 16px
+    margin-bottom: 0
+    font-family: 'Product Sans Medium'
+    font-size: 14px
+    cursor: pointer
+    color: #000
+    border-bottom: 1px solid #ECECEC
