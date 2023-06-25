@@ -23,6 +23,7 @@ export class TabsComponent {
 
 export interface Tab {
     label: string;
+    icon?: string;
     code: string;
     active: boolean;
 }

@@ -1,0 +1,60 @@
+$tab-primary-color: #616200
+
+.tab-container
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 8px
+    border-bottom: 1px solid #7D7C6D
+
+    .tab
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 10px 8px
+        margin-bottom: 0
+        font-family: 'Readex Pro'
+        font-weight: 500
+        font-size: 12px
+        cursor: pointer
+        color: $text-color
+        width: auto
+        position: relative
+        //transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+
+        .tab-content
+            position: relative
+            display: flex
+            flex-direction: column
+            gap: 4px
+            align-items: center
+
+            &::after
+                content: ''
+                display: block
+                position: absolute
+                bottom: -10px
+                left: 50%
+                transform: translateX(-50%)
+                width: 0
+                height: 4px
+                background-color: $tab-primary-color
+                transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1)
+                transform-origin: center
+                border-top-left-radius: 4px
+                border-top-right-radius: 4px
+
+        &:hover
+            background-color: $secondary-color-hover
+
+        &:hover, &.active
+            color: $tab-primary-color
+            font-weight: 600
+
+        &.active
+            pointer-events: none
+            cursor: default
+
+            .tab-content
+                &::after
+                    width: 100%

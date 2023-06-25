@@ -1,81 +1,29 @@
-@font-face
-    font-family: 'Product Sans Regular'
-    font-style: normal
-    font-weight: normal
-    src: local('Product Sans Regular'), url('../assets/fonts/ProductSans-Regular.woff') format('woff')
-
-@font-face
-    font-family: 'Product Sans Medium'
-    font-style: normal
-    font-weight: normal
-    src: local('Product Sans Medium'), url('../assets/fonts/ProductSans-Medium.woff') format('woff')
-
-@font-face
-    font-family: 'Product Sans Bold'
-    font-style: normal
-    font-weight: normal
-    src: local('Product Sans Bold'), url('../assets/fonts/ProductSans-Bold.woff') format('woff')
-
-@font-face
-    font-family: 'Product Sans Italic'
-    font-style: normal
-    font-weight: normal
-    src: local('Product Sans Italic'), url('../assets/fonts/ProductSans-Italic.woff') format('woff')
-
-@font-face
-    font-family: 'Product Sans Medium Italic'
-    font-style: normal
-    font-weight: normal
-    src: local('Product Sans Medium Italic'), url('../assets/fonts/ProductSans-MediumItalic.woff') format('woff')
-
-@font-face
-    font-family: 'Product Sans Bold Italic'
-    font-style: normal
-    font-weight: normal
-    src: local('Product Sans Bold Italic'), url('../assets/fonts/ProductSans-BoldItalic.woff') format('woff')
-
-@font-face
-    font-family: 'Product Sans Light'
-    font-style: normal
-    font-weight: normal
-    src: local('Product Sans Light'), url('../assets/fonts/ProductSans-Light.woff') format('woff')
-
-@font-face
-    font-family: 'Product Sans Light Italic'
-    font-style: normal
-    font-weight: normal
-    src: local('Product Sans Light Italic'), url('../assets/fonts/ProductSans-LightItalic.woff') format('woff')
-
-@font-face
-    font-family: 'Product Sans Thin'
-    font-style: normal
-    font-weight: normal
-    src: local('Product Sans Thin'), url('../assets/fonts/ProductSans-Thin.woff') format('woff')
-
-@font-face
-    font-family: 'Product Sans Thin Italic'
-    font-style: normal
-    font-weight: normal
-    src: local('Product Sans Thin Italic'), url('../assets/fonts/ProductSans-ThinItalic.woff') format('woff')
-
-@font-face
-    font-family: 'Product Sans Black'
-    font-style: normal
-    font-weight: normal
-    src: local('Product Sans Black'), url('../assets/fonts/ProductSans-Black.woff') format('woff')
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap')
 
 // classes for fonts
 .fw-bold
-    font-family: 'Product Sans Bold', sans-serif
+    font-family: 'Readex Pro', sans-serif
+    font-weight: 700
+
+.fw-semibold
+    font-family: 'Readex Pro', sans-serif
+    font-weight: 600
 
 .fw-medium
-    font-family: 'Product Sans Medium', sans-serif
+    font-family: 'Readex Pro', sans-serif
+    font-weight: 500
 
 .fw-regular
-    font-family: 'Product Sans Regular', sans-serif
+    font-family: 'Readex Pro', sans-serif
+    font-weight: 400
 
 .fw-light
-    font-family: 'Product Sans Light', sans-serif
+    font-family: 'Readex Pro', sans-serif
+    font-weight: 300
+
+.fw-mono
+    font-family: 'Roboto Mono', monospace !important
 
 h1
     font-size: 32px
@@ -116,3 +64,103 @@ p
     color: $text-color
     margin: 0
     margin-bottom: 8px
+
+.display-1
+    color: var($text-color)
+
+    font-size: 64px
+    font-family: Readex Pro
+    line-height: 76px
+    letter-spacing: -0.5px
+
+.display-2
+    color: var($text-color)
+
+    font-size: 57px
+    font-family: Readex Pro
+    line-height: 64px
+    letter-spacing: -0.25px
+
+.display-3
+    color: var($text-color)
+
+    font-size: 45px
+    font-family: Readex Pro
+    line-height: 52px
+
+.headline-1
+    color: var($text-color)
+
+    font-size: 36px
+    font-family: Readex Pro
+    line-height: 44px
+
+.headline-2
+    color: var($text-color)
+
+    font-size: 32px
+    font-family: Readex Pro
+    line-height: 40px
+
+.headline-3
+    color: var($text-color)
+
+    font-size: 28px
+    font-family: Readex Pro
+    line-height: 36px
+
+.headline-4
+    color: var($text-color)
+
+    font-size: 24px
+    font-family: Readex Pro
+    line-height: 32px
+
+.headline-5
+    color: var($text-color)
+
+    font-size: 22px
+    font-family: Readex Pro
+    line-height: 28px
+
+.headline-6
+    color: var($text-color)
+
+    font-size: 18px
+    font-family: Readex Pro
+    line-height: 24px
+
+button
+    color: var($text-color)
+
+    font-size: 14px
+    font-family: Readex Pro
+    font-weight: 500
+    line-height: 20px
+    letter-spacing: 0.1px
+
+.caption
+    color: var($text-color)
+
+    font-size: 12px
+    font-family: Readex Pro
+    line-height: 16px
+    letter-spacing: 0.4px
+
+label, .labelSmall
+    color: var($text-color)
+
+    font-size: 11px
+    font-family: Readex Pro
+    font-weight: 500
+    line-height: 16px
+    letter-spacing: 0.5px
+
+.title
+    color: var($text-color)
+
+    font-size: 16px
+    font-family: Readex Pro
+    font-weight: 500
+    line-height: 24px
+    letter-spacing: 0.1px

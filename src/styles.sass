@@ -1,54 +1,37 @@
-$bg-color: #FFFFFF
-$bg-secondary: #EFF6FF
+$bg-color: #EEEBD8
+$bg-secondary: #FFFCF3
+$bg-tertiary: #E6E3D1
 
-$primary-color: #1967D2
-$primary-color-hover: #195AB4
-$primary-color-active: #195AB4
-$primary-color-disabled: #E1E3E4
+$primary-color: #AEF0D6
+$primary-color-hover: #A2E9D0
+$primary-color-active: #9DE5CC
+$primary-color-disabled: #F7F3FC
 
-$secondary-color: #DBEAFE
-$secondary-color-hover: #C3DAFE
-$secondary-color-active: #C3DAFE
-$secondary-color-disabled: #E1E3E4
+$secondary-color: #E6E4C0
+$secondary-color-hover: #E0DDB6
+$secondary-color-active: #DAD7AC
+$secondary-color-disabled: #F7F3FC
 
-$text-color: #3C4043
-$text-secondary: #1967D2
-$font-family: 'Product Sans Regular', sans-serif
+$tertiary-color: #E3DFD0
+$tertiary-color-hover: #DCD9CA
+$tertiary-color-active: #D9D6C7
+$tertiary-color-disabled: #F7F3FC
 
+$text-color: #474E44
+$text-secondary: #1C1D06
+$border-color: #7D7C6D
+$font-family: 'Readex Pro', sans-serif
+
+@import 'sass/variables'
 @import 'sass/typography'
 @import 'sass/inputs'
 @import 'sass/buttons'
 @import 'sass/dropdown'
-
-html
-    width: 350px
-    background-color: #FFFFFF
-    height: 100%
-
-.bg-primary
-    background-color: $primary-color
-
-.bg-secondary
-    background-color: $bg-secondary
-
-.bg-white
-    background-color: $bg-color
-
-.text-primary
-    color: $primary-color
-
-.text-color
-    color: $text-color
-
-/* Ripple effect */
-.ripple
-    background-position: center
-    transition: background 0.8s
-
-    &:hover
-        background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%
-
-    &:active
-        background-color: #6eb9f7
-        background-size: 100%
-        transition: background 0s
+@import 'sass/tabs'
+@import 'sass/lists'
+@import 'sass/divider'
+@import 'sass/tabs'
+@import 'sass/navigation-bar'
+@import 'sass/checkbox'
+@import 'sass/ripple'
+@import 'sass/radio'

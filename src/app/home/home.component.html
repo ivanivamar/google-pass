@@ -1,65 +1,31 @@
 <div *ngIf="!loading">
-    <header class="flex align-items-center justify-content-between px-3 py-2">
-        <h2 class="m-0 fw-bold">Google Pass</h2>
-        <div class="flex gap-3 align-items-center">
-            <!-- <button class="icon-btn text-btn" (click)="showSearch = !showSearch">
-                <span class="material-symbols-outlined">search</span>
-            </button> -->
-            <div class="dropdown-menu" [class.show]="showUserMenu">
-                <span class="dropbtn" (click)="showUserMenu = !showUserMenu">
-                    <div class="border-circle bg-secondary p-2 flex align-items-center justify-content-center"
-                        style="width: 25px;height: 25px;" *ngIf="user.image.length === 0">
-                        <span class="text-primary text-lg fw-bold">{{ user.username.substring(0, 1) }}</span>
-                    </div>
-                    <img [src]="user.image" class="border-circle" alt="avatar" width="25" height="25"
-                        *ngIf="user.image.length !== 0">
-                </span>
-                <div class="dropdown-content left-auto right-0">
-                    <div (click)="editProfile()">
-                        <i class="material-symbols-outlined">edit</i>
-                        Edit Profile
-                    </div>
-                    <div (click)="logout()">
-                        <i class="material-symbols-outlined">logout</i>
-                        Logout
-                    </div>
-                </div>
+    <header class="flex flex-column bg-white">
+        <div class="header-top flex align-items-center justify-content-between p-3 py-2">
+            <h1 class="title m-0">
+                Strong Box
+            </h1>
+            <div class="flex gap-3 align-items-center">
+                <app-search (searchEdit)="searchEdit($event)" [passwords]="passwordsBackup"
+                    [notes]="notesBackup"></app-search>
+                <app-profile-modal [user]="user"></app-profile-modal>
             </div>
         </div>
+        <tabs [items]="homeTabs" (tabChanged)="tab = $event"></tabs>
     </header>
 
-    <tabs [items]="homeTabs" (tabChanged)="tab = $event"></tabs>
-
-    <div class="p-2 px-3" style="border-bottom: 1px solid #eee">
-        <m-input [placeholder]="'Search'" [(value)]="searchText" [inputType]="'text'" [icon]="'search'"
-            [name]="'search'" (valueChange)="search()" [showClear]="true"></m-input>
-    </div>
-
-    <div [ngSwitch]="tab">
-        <div *ngSwitchCase="'passwords'">
-            <div class="mx-3 my-1 dropdown-menu" [class.show]="showOrderPasswordsMenu">
-                <span class="dropbtn" (click)="showOrderPasswordsMenu = !showOrderPasswordsMenu">
-                    <span *ngIf="orderBy === 'url'" class="fw-bold text-xs px-2 py-1">Title name</span>
-                    <span *ngIf="orderBy === 'updatedAt'" class="fw-bold text-xs px-2 py-1">Last time used</span>
-                    <i class="material-symbols-outlined arrow">arrow_drop_down</i>
-                </span>
-                <div class="dropdown-content">
-                    <span class="fw-bold text-xs px-2 py-1">Order by</span>
-                    <div [class.active]="orderBy === 'url'"
-                        (click)="showOrderPasswordsMenu = false; orderPasswordsBy('url')">Title name</div>
-                    <div [class.active]="orderBy === 'updatedAt'"
-                        (click)="showOrderPasswordsMenu = false; orderPasswordsBy('updatedAt')">Last time used</div>
-                </div>
-            </div>
+    <div [ngSwitch]="tab" style="height: 424px;">
+        <div *ngSwitchCase="'passwords'" class="list-container" [class.isScrolled]="isScrolled">
             <passwords [passwords]="passwordsBackup" (editPasswordModal)="editPassword($event)"></passwords>
         </div>
-        <div *ngSwitchCase="'notes'">
+        <div *ngSwitchCase="'notes'" class="list-container">
             <notes [notes]="notesBackup" (editNoteModal)="editNote($event)"></notes>
         </div>
-        <div *ngSwitchCase="'payments'">output3</div>
+        <div *ngSwitchCase="'payments'" class="list-container">
+            output3
+        </div>
     </div>
 
-    <button class="fab ripple" (click)="create()">
+    <button class="fab" Ripple (click)="create()">
         <span class="material-symbols-outlined">add</span>
     </button>
 </div>

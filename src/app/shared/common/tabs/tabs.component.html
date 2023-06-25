@@ -1,6 +1,8 @@
-<div class="grid m-0 w-full">
-    <div class="col tab" [class.active]="tab.active" *ngFor="let tab of items"
-        (click)="selectTab(tab)">
-        <span>{{ tab.label }}</span>
+<div class="tab-container">
+    <div class="col tab relative" Ripple [class.active]="tab.active" *ngFor="let tab of items" (click)="selectTab(tab)">
+        <div class="tab-content">
+            <i class="material-symbols-outlined">{{ tab.icon }}</i>
+            <span>{{ tab.label }}</span>
+        </div>
     </div>
 </div>

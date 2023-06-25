@@ -4,10 +4,10 @@
             <i class="material-symbols-outlined" *ngIf="icon.length > 0">{{ icon }}</i>
             <div class="flex flex-column gap-2 w-full">
                 <label class="floating-label">
-                    {{ placeholder }}
+                    {{ label }}
                     <span class="required-asterisk" *ngIf="required">*</span>
                 </label>
-                <input #inputRef [type]="inputType" class="input" [ngModel]="value" (ngModelChange)="valueChange.emit($event)" name="{{ name }}"
+                <input #inputRef [type]="inputType" class="input" [placeholder]="placeholder" [ngModel]="value" (ngModelChange)="valueChange.emit($event)" name="{{ name }}"
                     [disabled]="disabled" (focus)="onFocus()" (blur)="onBlur()" (ngModelChange)="verifyInput()" />
             </div>
         </div>

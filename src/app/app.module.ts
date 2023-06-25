@@ -22,6 +22,9 @@ import { PasswordsComponent } from './home/passwords/passwords.component';
 import { PasswordModalComponent } from './home/passwords/password-modal/password-modal.component';
 import { NotesComponent } from './home/notes/notes.component';
 import { NoteModalComponent } from './home/notes/note-modal/note.modal.component';
+import { SearchComponent } from './home/search/search.component';
+import { ProfileModalComponent } from './home/profile-modal/profile-modal.component';
+import { RippleDirective } from './ripple.directive';
 
 @NgModule({
     declarations: [
@@ -37,6 +40,9 @@ import { NoteModalComponent } from './home/notes/note-modal/note.modal.component
         PasswordModalComponent,
         NotesComponent,
         NoteModalComponent,
+        SearchComponent,
+        ProfileModalComponent,
+        RippleDirective,
     ],
     imports: [
         BrowserModule,
@@ -48,10 +54,10 @@ import { NoteModalComponent } from './home/notes/note-modal/note.modal.component
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideFirestore(() => getFirestore()),
         provideStorage(() => getStorage()),
-        provideAuth(() => getAuth()),
+        provideAuth(() => getAuth())
     ],
     providers: [],
     bootstrap: [AppComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }
