@@ -62,7 +62,7 @@
         gap: 8px
 
     &:hover
-        color: #fff
+        color: $text-color
         background-color: #5F6368
         cursor: pointer
 
@@ -74,12 +74,12 @@
         &:hover
             background-color: $primary-color-hover
             border-color: $primary-color-hover
-            color: #fff
+            color: $text-color
 
         &:active
             background-color: $primary-color-active
             border-color: $primary-color-active
-            color: #fff
+            color: $text-color
 
         &:disabled
             opacity: 0.5
@@ -90,7 +90,7 @@
     &.filled
         background-color: $primary-color
         border-color: $primary-color
-        color: #fff
+        color: $text-color
 
         &:hover
             background-color: $primary-color-hover
@@ -131,7 +131,7 @@
 
     &.filled-btn
         background-color: $primary-color
-        color: #fff
+        color: $text-color
 
         &:hover
             background-color: $primary-color-hover
@@ -191,7 +191,7 @@
 
     &.text-btn
         background-color: transparent
-        color: $primary-color
+        color: black
 
         &:hover
             background-color: $secondary-color
@@ -202,6 +202,11 @@
         &:disabled
             opacity: 0.5
             cursor: not-allowed
+
+$fab-primary-container: #E8E970
+$fab-primary-hover: #f3f38a
+$fab-primary-active: #e8e970
+$fab-on-primary-container: #000000
 
 .fab
     border: 0
@@ -220,17 +225,18 @@
     justify-content: center
     height: 56px
     width: 56px
-    background-color: $primary-color
-    color: #fff
+    background-color: $fab-primary-container
+    color: $fab-on-primary-container
     position: absolute
-    bottom: 72px
-    right: 24px
+    bottom: 88px
+    right: 16px
+    box-shadow: 0px 1px 3px 1px #00000026, 0px 1px 2px 0px #0000004D
 
     &:hover
-        background-color: $primary-color-hover
+        background-color: $fab-primary-hover
 
     &:active
-        background-color: $primary-color-active
+        background-color: $fab-primary-active
 
     &:disabled
         opacity: 0.5
@@ -270,18 +276,18 @@
     justify-content: center
     height: 56px
     width: 168px
-    background-color: $primary-color
-    color: #fff
+    background-color: $fab-primary-container
+    color: $fab-on-primary-container
     box-shadow: 0px 2px 6px 2px #00000026, 0px 1px 2px 0px #0000004D
     position: absolute
-    bottom: 72px
-    right: 24px
+    bottom: 88px
+    right: 16px
 
     &:hover
-        background-color: $primary-color-hover
+        background-color: $fab-primary-hover
 
     &:active
-        background-color: $primary-color-active
+        background-color: $fab-primary-active
 
     &:disabled
         opacity: 0.5
@@ -307,13 +313,14 @@
     justify-content: center
     height: 40px
     width: 40px
+    margin: 4px
 
     i
         font-size: 16px
 
     &.filled-btn
         background-color: $primary-color
-        color: #fff
+        color: white
 
         &:hover
             background-color: $primary-color-hover
@@ -328,7 +335,7 @@
 
     &.tonal-btn
         background-color: $secondary-color
-        color: #3B82F6
+        color: $text-color
 
         &:hover
             background-color: $secondary-color-hover
@@ -344,7 +351,7 @@
     &.outlined-btn
         background-color: transparent
         border: 1px solid $primary-color
-        color: $primary-color
+        color: $text-color
 
         &:hover
             background-color: $secondary-color-hover
@@ -357,7 +364,7 @@
             cursor: not-allowed
 
     &.elevated-btn
-        background-color: #fff
+        background-color: $text-color
         color: $primary-color
         box-shadow: 0px 1px 3px 1px #00000026, 0px 1px 2px 0px #0000004D
 
@@ -372,14 +379,14 @@
             cursor: not-allowed
 
     &.text-btn
-        background-color: transparent !important
-        color: $primary-color !important
+        background-color: transparent
+        color: $text-color
 
         &:hover
-            background-color: $secondary-color !important
+            background-color: $tertiary-color-hover
 
         &:active
-            background-color: $secondary-color !important
+            background-color: $tertiary-color-active
 
         &:disabled
             opacity: 0.5

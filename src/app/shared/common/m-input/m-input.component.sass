@@ -1,17 +1,13 @@
 // Input text field:
 .input-container
-    border: 0
-    border: 1px solid #ECECEC
-    background-color: #fff
+    background-color: transparent
+    border: 1px solid #9D9C8C
     padding: 8px 12px
     display: flex
     align-items: center
     justify-content: space-between
     border-radius: 8px
     height: 32px
-
-    &:hover
-        border-color: #64748B
 
     &:disabled
         opacity: 0.5
@@ -24,11 +20,11 @@
         position: relative
 
         i
-            color: #475569
+            color: #616056
             font-size: 20px
 
         .floating-label
-            color: #475569
+            color: #616056
             font-family: 'Readex Pro', sans-serif
             font-size: 14px
             font-weight: 500
@@ -40,7 +36,6 @@
             transform: translateY(-50%)
             transition: all 0.2s ease-in-out
             z-index: 0
-            background-color: #fff
 
             .required-asterisk
                 color: #DC2626
@@ -49,7 +44,7 @@
         input
             padding: 0
             border: 0
-            color: #475569
+            color: #616056
             background-color: transparent
             font-size: 14px
             font-weight: 400
@@ -58,14 +53,13 @@
             transition: all 0.2s ease-in-out
             font-family: 'Readex Pro', sans-serif
             z-index: 1
-            position: relative
 
             &::placeholder
-                color: #64748B
+                color: #616056
 
         .input-actions
             button
-                background-color: #64748B
+                background-color: transparent
                 height: 24px
                 width: 24px
 
@@ -75,13 +69,11 @@
                     font-weight: bold
 
     &.active
-        border-color: #3B82F6
-
         .floating-label
-            transform: translate(-8px,-34px) !important
+            transform: translate(-28px,-36px)!important
             font-size: 11px!important
-            color: #3b82f6!important
-            padding: 2px
+            background-color: #FFFBFE
+            padding: 4px
 
     &.error
         border-color: #DC2626
@@ -100,7 +92,7 @@
             color: #DC2626
 
     .helper-text
-        color: #94A3B8
+        color: #616056
         font-size: 12px
         font-weight: 400
         line-height: 16px
@@ -114,7 +106,7 @@
         gap: 4px
 
         .counter-text
-            color: #94A3B8
+            color: #616056
             font-size: 12px
             font-weight: 400
             line-height: 16px

@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, Renderer2, ViewChild } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { PasswordManagerService } from '../password-manager.service';
 import { CreditCard, Note, Password, User } from '../interfaces';
 import { from } from 'rxjs';
 import { Tab } from '../shared/common/tabs/tabs.component';
 import { Router } from '@angular/router';
+import { SearchObject } from './search/search.component';
 
 @Component({
     selector: 'app-home',
@@ -13,23 +14,30 @@ import { Router } from '@angular/router';
     providers: [AuthService, PasswordManagerService]
 })
 export class HomeComponent {
+    @ViewChild('pageTitle', { static: true }) pageTitle: ElementRef | undefined;
+
     loading: boolean = false;
     user: User = {} as User;
     showUserMenu: boolean = false;
 
+    isScrolled: boolean = false;
+
     homeTabs: Tab[] = [
         {
             label: 'Passwords',
+            icon: 'password',
             code: 'passwords',
             active: true,
         },
         {
             label: 'Secure Notes',
+            icon: 'sticky_note_2',
             code: 'notes',
             active: false,
         },
         {
             label: 'Payments',
+            icon: 'credit_card',
             code: 'payments',
             active: false,
         },
@@ -58,6 +66,7 @@ export class HomeComponent {
         private auth: AuthService,
         private passwordManager: PasswordManagerService,
         private router: Router,
+        private renderer: Renderer2
     ) { }
 
     ngOnInit(): void {
@@ -87,20 +96,6 @@ export class HomeComponent {
         this.router.navigate(['profile']);
     }
 
-    logout(): void {
-        this.showUserMenu = false;
-
-        this.auth.logout()
-            .then(() => {
-                this.router.navigate(['']);
-                setTimeout(() => {
-                    window.location.reload();
-                }, 500);
-            }).catch((error) => {
-                console.log('error', error);
-            });
-    }
-
     create() {
         switch (this.tab) {
             case 'passwords':
@@ -112,6 +107,20 @@ export class HomeComponent {
             case 'payments':
                 this.showPaymentModal = true;
                 break;
+        }
+    }
+
+    searchEdit(obj: SearchObject): void {
+        switch (obj.type) {
+            case 'password':
+                this.editPassword(obj.data as Password);
+                break;
+            case 'note':
+                this.editNote(obj.data as Note);
+                break;
+            /* case 'payment':
+                this.editPayment(obj.data as CreditCard);
+                break; */
         }
     }
 
@@ -244,6 +253,12 @@ export class HomeComponent {
                 // filter payments
                 break;
         }
+    }
+
+    // Animations:
+    @HostListener('window:scroll', [])
+    onWindowScroll() {
+        this.isScrolled = window.scrollY > 24; // Adjust the value to your desired scroll position
     }
 
     private idGenerator(): string {

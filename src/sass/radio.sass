@@ -1,0 +1,49 @@
+input[type="radio"]
+    appearance: none
+    width: 24px
+    height: 24px
+    position: relative
+
+    &::before
+        content: ""
+        display: block
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 42px
+        height: 42px
+        border-radius: 50%
+        background-color: $secondary-color-hover
+        transition-timing-function: linear
+        transform: scale(.32)
+        opacity: 0
+        transition-duration: .2s
+        transition-property: transform,opacity
+
+    &::after
+        position: absolute
+        inset: 0px
+        -webkit-font-smoothing: antialiased
+        font-feature-settings: "liga"
+        direction: ltr
+        overflow-wrap: normal
+        white-space: nowrap
+        text-transform: none
+        letter-spacing: normal
+        line-height: 1
+        font-weight: normal
+        font-family: "Material Icons"
+        content: "radio_button_unchecked"
+        color: $border-color
+        font-size: 24px
+
+    &:hover
+        &::before
+            transform: scale(1)
+            opacity: 1
+
+    &:checked
+        &::after
+            content: "radio_button_checked"
+            color: $secondary-color

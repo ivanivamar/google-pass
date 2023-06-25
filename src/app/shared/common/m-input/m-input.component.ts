@@ -10,6 +10,7 @@ export class MInputComponent {
 
     @Input() value: any = null;
     @Input() placeholder: string = '';
+    @Input() label: string = '';
     @Input() disabled: boolean = false;
     @Input() icon: string = '';
     @Input() showClear: boolean = false;

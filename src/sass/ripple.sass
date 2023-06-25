@@ -1,0 +1,18 @@
+.ripple
+    overflow: hidden
+
+.ripple-effect
+    width: 2px
+    height: 2px
+    position: absolute
+    border-radius: 50%
+    background-color: rgba(0, 0, 0, 0.3)
+    animation: rippleEffect 1s ease-in-out
+
+@keyframes rippleEffect
+    0%
+        transform: scale(1)
+
+    100%
+        opacity: 0
+        transform: scale(200)

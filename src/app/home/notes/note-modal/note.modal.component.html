@@ -1,24 +1,26 @@
-<div class="flex flex-column h-full w-full absolute top-0 left-0 bg-white" style="z-index: 999999">
-    <header class="p-2 flex justify-content-between align-items-center" style="border-bottom: 1px solid #eee">
-        <div class="flex align-items-center gap-2">
-            <button class="icon-btn text-btn" (click)="closeModal()">
-                <span class="material-symbols-outlined">arrow_back</span>
+<div class="flex flex-column absolute top-0 left-0 dialog dialog-animation" style="z-index: 999999">
+    <header class="p-2 flex flex column mb-3" style="border-bottom: 1px solid #7D7C6D">
+        <div class="flex align-items-center justify-content-between">
+            <div class="flex align-items-center gap-2">
+                <button class="icon-btn text-btn" (click)="closeModal()">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </button>
+                <input class="text-lg fw-bold" [(ngModel)]="note.name" placeholder="Title..." />
+            </div>
+
+            <button class="icon-btn text-btn" *ngIf="note.id" (click)="delete()">
+                <span class="material-symbols-outlined">delete</span>
             </button>
-            <input class="text-lg fw-bold" [(ngModel)]="note.name" placeholder="Title..." />
         </div>
 
-        <button class="icon-btn text-btn" *ngIf="note.id" (click)="delete()">
-            <span class="material-symbols-outlined">delete</span>
-        </button>
+        <tabs [items]="notesTabs" (tabChanged)="tab = $event"></tabs>
     </header>
-
-    <tabs [items]="notesTabs" (tabChanged)="tab = $event"></tabs>
 
     <div class="p-3 flex flex-column gap-3 overflow-y-auto" style="min-height: 250px;">
         <div [ngSwitch]="tab">
             <div *ngSwitchCase="'details'">
                 <div class="textarea flex flex-column gap-2">
-                    <span class="fw-bold text-lg">Content</span>
+                    <span class="title">Content</span>
                     <textarea [(ngModel)]="note.content" name="content" rows="10"
                         class="w-full h-full border-transparent p-0"></textarea>
                 </div>
@@ -26,8 +28,10 @@
             <div *ngSwitchDefault>
                 <div class="dropdown-menu" [class.show]="showColors">
                     <span class="dropbtn" (click)="showColors = !showColors">
-                        <span class="material-symbols-outlined" [style.color]="note.color">palette</span>
-                        Color
+                        <div class="w-full flex align-items-center gap-2">
+                            <span class="material-symbols-outlined" [style.color]="note.color">palette</span>
+                            Color
+                        </div>
                         <span class="material-symbols-outlined arrow">arrow_drop_down</span>
                     </span>
                     <div class="dropdown-content">

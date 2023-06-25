@@ -1,10 +1,10 @@
-<div class="p-3 pt-2 flex flex-column gap-2 overflow-y-auto w-100 max-h-20rem pb-6">
-    <div class="notes-card flex align-items-center gap-3" *ngFor="let note of notes" (click)="editNote(note)">
+<div class="list">
+    <div class="list-item" *ngFor="let note of notes" (click)="editNote(note)">
         <div class="notes-icon" [style.backgroundColor]="note.color">
-            <i class="material-symbols-outlined">sticky_note</i>
+            <i class="material-symbols-outlined">sticky_note_2</i>
         </div>
-        <div class="flex flex-column w-full">
-            <span class="fw-bold text-lg">{{ note.name }}</span>
+        <div class="list-item__content">
+            <span class="list-item__title">{{ note.name }}</span>
         </div>
     </div>
 </div>
