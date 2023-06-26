@@ -25,8 +25,11 @@ export class RippleDirective {
         this.renderer.appendChild(this.elementRef.nativeElement, ripple);
 
         setTimeout(() => {
-            this.renderer.removeClass(this.elementRef.nativeElement, 'ripple');
             this.renderer.removeChild(this.elementRef.nativeElement, ripple);
-        }, 500);
+        }, 600);
+
+        setTimeout(() => {
+            this.renderer.removeClass(this.elementRef.nativeElement, 'ripple');
+        }, 800);
     }
 }

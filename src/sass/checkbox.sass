@@ -3,14 +3,14 @@ input[type="checkbox"]
     width: 24px
     height: 24px
     position: relative
+    cursor: pointer
 
     &::before
         content: ""
         display: block
         position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%, -50%)
+        top: -9px
+        left: -9px
         width: 42px
         height: 42px
         border-radius: 50%
@@ -33,7 +33,7 @@ input[type="checkbox"]
         letter-spacing: normal
         line-height: 1
         font-weight: normal
-        font-family: "Material Icons"
+        font-family: 'Material Symbols Outlined'
         content: "check_box_outline_blank"
         color: $border-color
         font-size: 24px
@@ -46,4 +46,10 @@ input[type="checkbox"]
     &:checked
         &::after
             content: "check_box"
-            color: $secondary-color
+            color: $text-color
+
+    &:disabled
+        cursor: not-allowed
+        pointer-events: none
+        &::after
+            color: #9D9C8C
