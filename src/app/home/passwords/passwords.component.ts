@@ -30,6 +30,7 @@ export class PasswordsComponent implements OnInit {
         'https://books.google.com',
         'https://google.com',
         'https://youtube.com',
+        'https://music.youtube.com',
         'https://www.google.com',
         'https://www.youtube.com',
         'https://play.google.com',

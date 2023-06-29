@@ -30,7 +30,7 @@
                     (click)="sendSearchEdit('password', password)">
                     <img [src]="favicon(password.url)" alt="PasswordImage">
                     <div class="list-item__content">
-                        <span class="list-item__title">{{ password.url }}</span>
+                        <span class="list-item__title">{{ password.title ? password.title : password.url }}</span>
                         <span class="list-item__subtitle">{{ password.username }}</span>
                     </div>
 

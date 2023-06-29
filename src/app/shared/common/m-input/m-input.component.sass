@@ -8,6 +8,7 @@
     justify-content: space-between
     border-radius: 8px
     height: 32px
+    transition: all 0.2s ease-in-out
 
     &:disabled
         opacity: 0.5
@@ -69,6 +70,9 @@
                     font-weight: bold
 
     &.active
+        border-color: #626201
+        border-width: 2px
+
         .floating-label
             transform: translate(-28px,-36px)!important
             font-size: 11px!important
