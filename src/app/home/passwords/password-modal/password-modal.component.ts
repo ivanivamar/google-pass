@@ -1,3 +1,4 @@
+import { Form, HelperMethods } from './../../../shared/helper-methods';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Password } from 'src/app/interfaces';
 import { PasswordManagerService } from 'src/app/password-manager.service';
@@ -18,6 +19,12 @@ export class PasswordModalComponent implements OnInit {
     title: string = 'Add Password';
     showPassword: boolean = false;
 
+    invalidUrl: string = '';
+    invalidUsername: string = '';
+    invalidPassword: string = '';
+
+    private helpers: HelperMethods = new HelperMethods();
+
     constructor(
         private passwordManager: PasswordManagerService
     ) { }
@@ -28,6 +35,37 @@ export class PasswordModalComponent implements OnInit {
     }
 
     save(): void {
+        let form: Form[] = [
+            {
+                name: 'name',
+                value: this.password.url,
+                invalid: false,
+            },
+            {
+                name: 'username',
+                value: this.password.username,
+                invalid: false,
+            },
+            {
+                name: 'password',
+                value: this.password.password,
+                invalid: false,
+            },
+        ];
+
+        if (!this.helpers.validateForm(form)) {
+            form.forEach((element: any) => {
+                let name = element.name.charAt(0).toUpperCase() + element.name.slice(1);
+                if (element.invalid) {
+                    this.invalidUrl = element.name === 'url' ? `${name} is required` : '';
+                    this.invalidUsername = element.name === 'username' ? `${name} is required` : '';
+                    this.invalidPassword = element.name === 'password' ? `${name} is required` : '';
+                }
+            });
+
+            return;
+        }
+
         this.savePassword.emit(this.password);
     }
 

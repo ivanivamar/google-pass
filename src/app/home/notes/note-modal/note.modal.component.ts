@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Note } from 'src/app/interfaces';
+import { IDropdownOption, Note } from 'src/app/interfaces';
 import { Tab } from 'src/app/shared/common/tabs/tabs.component';
 
 @Component({
@@ -31,29 +31,30 @@ export class NoteModalComponent implements OnInit {
     ];
     tab: string = 'details';
 
-    notesColors: any[] = [
+    notesColors: IDropdownOption[] = [
         {
-            color: '#4B95E9',
+            value: '#4B95E9',
             label: 'Blue',
+            selected: true,
         },
         {
-            color: '#F5A623',
+            value: '#F5A623',
             label: 'Orange',
         },
         {
-            color: '#F8E71C',
+            value: '#F8E71C',
             label: 'Yellow',
         },
         {
-            color: '#7ED321',
+            value: '#7ED321',
             label: 'Green',
         },
         {
-            color: '#9013FE',
+            value: '#9013FE',
             label: 'Purple',
         },
         {
-            color: '#D0021B',
+            value: '#D0021B',
             label: 'Red',
         },
     ];

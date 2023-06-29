@@ -1,1 +1,55 @@
-<p>generator works!</p>
+<div *ngIf="!loading">
+    <header class="flex flex-column bg-white">
+        <div class="header-top flex align-items-center justify-content-between p-3 py-2">
+            <h1 class="title m-0">
+                Generator
+            </h1>
+            <div class="flex gap-1 align-items-center">
+                <app-profile-modal [user]="user"></app-profile-modal>
+            </div>
+        </div>
+    </header>
+
+    <div class="list-container p-3">
+        <div class="flex flex-column w-full gap-2 mb-3">
+            <div class="relative">
+                <m-input [placeholder]="'Password'" [(value)]="generatedPassword" [inputType]="'text'"
+                    [name]="'password'" [icon]="'key'" [disabled]="true"></m-input>
+                <button class="icon-btn text-btn absolute top-50 right-0" style="transform: translateY(-60%)" Ripple
+                    (click)="copyToClipboard($event, generatedPassword)">
+                    <span class="material-symbols-outlined">content_copy</span>
+                </button>
+            </div>
+        </div>
+
+        <section class="mb-3">
+            <div class="flex align-items-center justify-content-between mb-2">
+                <label for="passwordLength">Password Length</label>
+                <span class="caption">{{ passwordLength }}</span>
+            </div>
+            <m-slider [min]="8" [max]="33" [value]="passwordLength" (valueChange)="passwordLength = $event; generatePassword()"></m-slider>
+        </section>
+
+        <section class="mb-3">
+            <div class="grid">
+                <div class="col-6" *ngFor="let option of options">
+                    <div class="flex align-items-center gap-2">
+                        <label class="caption flex align-items-center" [for]="option.value">
+                            <input Ripple type="checkbox" [id]="option.value" [(ngModel)]="option.checked"
+                                [disabled]="option.disabled" (change)="generatePassword()">
+                            {{ option.label }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <button class="btn tonal-btn w-full" Ripple (click)="generatePassword()">Generate</button>
+    </div>
+</div>
+
+<div *ngIf="loading" class="w-full h-full flex align-items-center justify-content-center py-8">
+    <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>

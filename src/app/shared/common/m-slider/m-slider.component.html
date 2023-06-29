@@ -1,0 +1,9 @@
+<div class="slider-container">
+    <div class="slider-track"></div>
+    <div class="slider-progress" [ngStyle]="{'width': thumbPosition + '%'}"></div>
+    <div class="slider-thumb" cdkDragBoundary=".slider-container" cdkDragLockAxis="x" cdkDrag
+        (cdkDragStarted)="onThumbDragStart($event)" (cdkDragEnded)="onThumbDragEnd($event)"></div>
+    <div class="slider-tooltip" [ngStyle]="{'left': thumbPosition + '%'}" [class.hidden]="!showTooltip">
+        <span class="caption">{{ value }}</span>
+    </div>
+</div>

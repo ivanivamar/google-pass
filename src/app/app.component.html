@@ -1,4 +1,4 @@
-<main>
+<main [class.isUser]="!user">
     <router-outlet></router-outlet>
 </main>
-<app-navbar></app-navbar>
+<app-navbar *ngIf="user"></app-navbar>

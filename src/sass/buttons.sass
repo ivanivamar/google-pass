@@ -146,7 +146,7 @@
 
     &.tonal-btn
         background-color: $secondary-color
-        color: #3B82F6
+        color: $text-color
 
         &:hover
             background-color: $secondary-color-hover
@@ -227,7 +227,7 @@ $fab-on-primary-container: #000000
     width: 56px
     background-color: $fab-primary-container
     color: $fab-on-primary-container
-    position: absolute
+    position: absolute !important
     bottom: 88px
     right: 16px
     box-shadow: 0px 1px 3px 1px #00000026, 0px 1px 2px 0px #0000004D
@@ -279,7 +279,7 @@ $fab-on-primary-container: #000000
     background-color: $fab-primary-container
     color: $fab-on-primary-container
     box-shadow: 0px 2px 6px 2px #00000026, 0px 1px 2px 0px #0000004D
-    position: absolute
+    position: absolute !important
     bottom: 88px
     right: 16px
 
@@ -383,10 +383,10 @@ $fab-on-primary-container: #000000
         color: $text-color
 
         &:hover
-            background-color: $tertiary-color-hover
+            background-color: $secondary-color-hover
 
         &:active
-            background-color: $tertiary-color-active
+            background-color: $secondary-color-active
 
         &:disabled
             opacity: 0.5
@@ -553,10 +553,10 @@ $fab-on-primary-container: #000000
             cursor: not-allowed
 
 a
-    color: $primary-color
+    color: $text-color
     text-decoration: none
     border-bottom: 1px solid transparent
     transition: border-bottom 0.2s ease
 
     &:hover
-        border-bottom: 1px solid $primary-color-hover
+        border-bottom: 1px solid $text-color

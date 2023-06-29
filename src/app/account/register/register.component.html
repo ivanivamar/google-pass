@@ -1,30 +1,31 @@
-<header>
-    <h1 class="text-white">Google Pass</h1>
-    <p class="text-white" style="max-width: 200px;">Register for a new account using your email and password</p>
-</header>
-<div class="p-3 h-10rem" style="margin-top: -30px;z-index: 999;position: relative;">
-    <div>
-        <div class="form-group mb-3">
-            <m-input [(value)]="registerForm.username" [name]="'username'" [inputType]="'text'" [label]="'Username'"
-                [required]="true" [icon]="'person'"></m-input>
-        </div>
-        <div class="form-group mb-3">
-            <m-input [(value)]="registerForm.email" [name]="'email'" [inputType]="'email'" [label]="'Email'"
-                [required]="true" [icon]="'email'"></m-input>
-        </div>
-        <div class="form-group mb-5">
-            <m-input [(value)]="registerForm.password" [name]="'password'" [inputType]="'password'"
-                [label]="'Password'" [required]="true" [icon]="'lock'"></m-input>
-        </div>
-        <button (click)="register()" class="bento-button primary w-full mb-2">
-            <div class="bento-button__inner-outline"></div>
-            <div class="bento-button__text">
-                Register
-            </div>
-        </button>
+<div style="background-color: #FFFBFE;" class="py-2 h-full">
+    <header class="p-2 flex flex-column gap-1">
+        <h1 class="title">Google Pass</h1>
+        <span class="caption" style="max-width: 200px;">Register for a new account using your email and password</span>
+    </header>
+    <div class="divider mt-0"></div>
 
-        <div class="text-center">
-            <a [routerLink]="'/login'">Already have an account? Login</a>
+    <div class="p-3 h-10rem">
+        <div>
+            <div class="form-group mb-3">
+                <m-input [(value)]="registerForm.username" [name]="'username'" [inputType]="'text'" [label]="'Username'"
+                    [required]="true" [icon]="'person'"></m-input>
+            </div>
+            <div class="form-group mb-3">
+                <m-input [(value)]="registerForm.email" [name]="'email'" [inputType]="'email'" [label]="'Email'"
+                    [required]="true" [icon]="'email'"></m-input>
+            </div>
+            <div class="form-group mb-5">
+                <m-input [(value)]="registerForm.password" [name]="'password'" [inputType]="'password'"
+                    [label]="'Password'" [required]="true" [icon]="'lock'"></m-input>
+            </div>
+            <button (click)="register()" class="btn filled-btn w-full mb-3">
+                Register
+            </button>
+
+            <div class="text-center">
+                <a [routerLink]="'/login'">Already have an account? Login</a>
+            </div>
         </div>
     </div>
 </div>

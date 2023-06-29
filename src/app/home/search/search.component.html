@@ -1,20 +1,20 @@
-<button class="icon-btn text-btn ripple" (click)="showSearch = !showSearch">
+<button class="icon-btn text-btn" Ripple (click)="showSearch = !showSearch">
     <span class="material-symbols-outlined">search</span>
 </button>
 
 <div class="flex flex-column absolute top-0 left-0 dialog dialog-animation" style="z-index: 999" *ngIf="showSearch">
     <header class="p-2 flex justify-content-between align-items-center sticky top-0 left-0">
-        <button class="icon-btn text-btn" (click)="close()">
+        <button class="icon-btn text-btn" Ripple (click)="close()">
             <span class="material-symbols-outlined">arrow_back</span>
         </button>
         <input type="text" class="w-auto" placeholder="Search" [(ngModel)]="searchText" (input)="search()">
-        <button class="icon-btn text-btn" (click)="searchText = ''; search()">
+        <button class="icon-btn text-btn" Ripple (click)="searchText = ''; search()">
             <span class="material-symbols-outlined">close</span>
         </button>
     </header>
     <div class="divider mt-0"></div>
 
-    <div class="flex flex-column p-3 gap-2" *ngIf="searchedPasswords.length === 0 && searchedNotes.length === 0">
+    <div class="flex flex-column p-3 pt-0 gap-2" *ngIf="searchedPasswords.length === 0 && searchedNotes.length === 0">
         <div class="flex align-items-center gap-2">
             <span class="material-symbols-outlined text-2xl">search</span>
             <span class="title">Search Results</span>
@@ -26,11 +26,11 @@
         <div *ngIf="searchedPasswords.length > 0">
             <div class="list">
                 <span class="list-title">Passwords</span>
-                <div class="list-item" angular-ripple *ngFor="let password of searchedPasswords"
+                <div class="list-item" Ripple *ngFor="let password of searchedPasswords"
                     (click)="sendSearchEdit('password', password)">
                     <img [src]="favicon(password.url)" alt="PasswordImage">
                     <div class="list-item__content">
-                        <span class="list-item__title">{{ password.url }}</span>
+                        <span class="list-item__title">{{ password.title ? password.title : password.url }}</span>
                         <span class="list-item__subtitle">{{ password.username }}</span>
                     </div>
 
@@ -48,7 +48,7 @@
         <div *ngIf="searchedNotes.length > 0">
             <div class="list">
                 <span class="list-title">Notes</span>
-                <div class="list-item" *ngFor="let note of searchedNotes" (click)="sendSearchEdit('note',note)">
+                <div class="list-item" Ripple *ngFor="let note of searchedNotes" (click)="sendSearchEdit('note',note)">
                     <div class="notes-icon" [style.backgroundColor]="note.color">
                         <i class="material-symbols-outlined">sticky_note</i>
                     </div>

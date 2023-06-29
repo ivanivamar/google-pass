@@ -15,6 +15,7 @@ export interface User {
 
 export interface Password {
     id: string;
+    title?: string;
     url: string;
     username: string;
     password: string;
@@ -44,4 +45,12 @@ export interface CreditCard {
 export interface Setting {
     theme: string;
     userId: string;
+}
+
+export interface IDropdownOption {
+    value: any;
+    icon?: string;
+    iconColor?: string;
+    label: string;
+    selected?: boolean;
 }

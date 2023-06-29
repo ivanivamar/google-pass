@@ -4,7 +4,7 @@
             <h1 class="title m-0">
                 Strong Box
             </h1>
-            <div class="flex gap-3 align-items-center">
+            <div class="flex gap-1 align-items-center">
                 <app-search (searchEdit)="searchEdit($event)" [passwords]="passwordsBackup"
                     [notes]="notesBackup"></app-search>
                 <app-profile-modal [user]="user"></app-profile-modal>
@@ -13,7 +13,7 @@
         <tabs [items]="homeTabs" (tabChanged)="tab = $event"></tabs>
     </header>
 
-    <div [ngSwitch]="tab" style="height: 424px;">
+    <div [ngSwitch]="tab">
         <div *ngSwitchCase="'passwords'" class="list-container" [class.isScrolled]="isScrolled">
             <passwords [passwords]="passwordsBackup" (editPasswordModal)="editPassword($event)"></passwords>
         </div>

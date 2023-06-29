@@ -25,6 +25,10 @@ import { NoteModalComponent } from './home/notes/note-modal/note.modal.component
 import { SearchComponent } from './home/search/search.component';
 import { ProfileModalComponent } from './home/profile-modal/profile-modal.component';
 import { RippleDirective } from './ripple.directive';
+import { MSliderComponent } from './shared/common/m-slider/m-slider.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MDropdownComponent } from './shared/common/m-dropdown/m-dropdown.component';
+
 
 @NgModule({
     declarations: [
@@ -43,6 +47,8 @@ import { RippleDirective } from './ripple.directive';
         SearchComponent,
         ProfileModalComponent,
         RippleDirective,
+        MSliderComponent,
+        MDropdownComponent
     ],
     imports: [
         BrowserModule,
@@ -54,7 +60,8 @@ import { RippleDirective } from './ripple.directive';
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideFirestore(() => getFirestore()),
         provideStorage(() => getStorage()),
-        provideAuth(() => getAuth())
+        provideAuth(() => getAuth()),
+        DragDropModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

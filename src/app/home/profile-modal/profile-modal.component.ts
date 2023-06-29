@@ -38,6 +38,7 @@ export class ProfileModalComponent {
             subtitle: 'Logout from your account.',
             icon: 'logout',
             action: 'logout',
+            danger: true,
         },
     ];
 
@@ -58,7 +59,7 @@ export class ProfileModalComponent {
                 console.log('twoFactorAuthentication');
                 break;
             case 'logout':
-                console.log('logout');
+                this.logout();
                 break;
         }
     }
@@ -66,10 +67,7 @@ export class ProfileModalComponent {
     logout(): void {
         this.auth.logout()
             .then(() => {
-                this.router.navigate(['']);
-                setTimeout(() => {
-                    window.location.reload();
-                }, 500);
+                this.router.navigate(['login']);
             }).catch((error) => {
                 console.log('error', error);
             });
@@ -82,4 +80,5 @@ export interface ProfileOption {
     subtitle: string;
     icon: string;
     action: string;
+    danger?: boolean;
 }
