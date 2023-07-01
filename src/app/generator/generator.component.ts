@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { from, generate } from 'rxjs';
 import { AuthService } from '../auth.service';
 import { PasswordManagerService } from '../password-manager.service';
 import { User } from '../interfaces';
 
 @Component({
-  selector: 'app-generator',
-  templateUrl: './generator.component.html',
-  styleUrls: ['./generator.component.sass']
+    selector: 'app-generator',
+    templateUrl: './generator.component.html',
+    styleUrls: ['./generator.component.sass']
 })
 export class GeneratorComponent implements OnInit {
+    @Input() fromPasswordModal: boolean = false;
+
+    @Output() generation: EventEmitter<string> = new EventEmitter<string>();
+
     loading = false;
 
     user: User;
@@ -53,17 +57,21 @@ export class GeneratorComponent implements OnInit {
     ngOnInit(): void {
         this.loading = true;
         // check if user is logged in
-        this.auth.isLoggedIn().then((user: any) => {
-            if (user) {
-                // get users from firestore
-                from(this.passwordManager.getUsers()).subscribe((users: User[]) => {
-                    if (users) {
-                        this.user = users.filter((u) => u.userId === user.uid)[0];
-                        this.loading = false;
-                    }
-                });
-            }
-        });
+        if (!this.fromPasswordModal) {
+            this.auth.isLoggedIn().then((user: any) => {
+                if (user) {
+                    // get users from firestore
+                    from(this.passwordManager.getUsers()).subscribe((users: User[]) => {
+                        if (users) {
+                            this.user = users.filter((u) => u.userId === user.uid)[0];
+                            this.loading = false;
+                        }
+                    });
+                }
+            });
+        } else {
+            this.loading = false;
+        }
 
         this.generatePassword();
     }
@@ -77,8 +85,8 @@ export class GeneratorComponent implements OnInit {
         }
 
         let staticPassword = '',
-        randomPassword = '',
-        checkedCheckboxes: string[] = [];
+            randomPassword = '',
+            checkedCheckboxes: string[] = [];
 
         this.options.forEach((option) => { // looping through each option's checkbox
             if (option.checked) { // if checkbox is checked
@@ -101,13 +109,14 @@ export class GeneratorComponent implements OnInit {
             }
         });
 
-        for(let i = 0; i < this.passwordLength; i++) {
+        for (let i = 0; i < this.passwordLength; i++) {
             // getting random character from the static password
             let randomChar = staticPassword[Math.floor(Math.random() * staticPassword.length)];
             randomPassword += randomChar; // adding random character to randomPassword
         }
 
         this.generatedPassword = randomPassword;
+        this.generation.emit(this.generatedPassword);
     }
 
     copyToClipboard(event: Event, value: string): void {

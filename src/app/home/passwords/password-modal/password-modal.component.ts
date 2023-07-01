@@ -19,6 +19,8 @@ export class PasswordModalComponent implements OnInit {
     title: string = 'Add Password';
     showPassword: boolean = false;
 
+    showGenerator: boolean = false;
+
     invalidUrl: string = '';
     invalidUsername: string = '';
     invalidPassword: string = '';
@@ -78,5 +80,9 @@ export class PasswordModalComponent implements OnInit {
             this.password.updatedAt = new Date().toUTCString();
         }
         this.close.emit();
+    }
+
+    getFavicon(url: string): string {
+        return `https://s2.googleusercontent.com/s2/favicons?domain=${encodeURIComponent(url)}`;
     }
 }

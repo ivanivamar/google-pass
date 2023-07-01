@@ -1,5 +1,5 @@
 <div *ngIf="!loading">
-    <header class="flex flex-column bg-white">
+    <header class="flex flex-column bg-white" *ngIf="!fromPasswordModal">
         <div class="header-top flex align-items-center justify-content-between p-3 py-2">
             <h1 class="title m-0">
                 Generator
@@ -11,7 +11,7 @@
     </header>
 
     <div class="list-container p-3">
-        <div class="flex flex-column w-full gap-2 mb-3">
+        <div class="flex flex-column w-full gap-2 mb-2">
             <div class="relative">
                 <m-input [placeholder]="'Password'" [(value)]="generatedPassword" [inputType]="'text'"
                     [name]="'password'" [icon]="'key'" [disabled]="true"></m-input>
@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <section class="mb-3">
+        <section class="mb-2">
             <div class="flex align-items-center justify-content-between mb-2">
                 <label for="passwordLength">Password Length</label>
                 <span class="caption">{{ passwordLength }}</span>
@@ -30,7 +30,7 @@
             <m-slider [min]="8" [max]="33" [value]="passwordLength" (valueChange)="passwordLength = $event; generatePassword()"></m-slider>
         </section>
 
-        <section class="mb-3">
+        <section class="mb-2">
             <div class="grid">
                 <div class="col-6" *ngFor="let option of options">
                     <div class="flex align-items-center gap-2">

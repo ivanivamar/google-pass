@@ -16,13 +16,17 @@ export class MSliderComponent implements OnInit {
     thumbPosition: number = 0;
     showTooltip: boolean = false;
 
+    initialThumbPos = 'unset';
+
     constructor() { }
 
     ngOnInit(): void {
         this.thumbPosition = ((this.value - this.min) / (this.max - this.min)) * 95;
+        this.initialThumbPos = this.thumbPosition + '%';
     }
 
     onThumbDragStart(event: CdkDragStart): void {
+        this.initialThumbPos = 'unset';
         const containerWidth = 318;
         const thumbWidth = event.source.element.nativeElement.offsetWidth;
         const thumbPosition = event.source.getFreeDragPosition().x + thumbWidth / 2;
@@ -30,24 +34,13 @@ export class MSliderComponent implements OnInit {
 
         this.thumbPosition = Math.round(this.thumbPosition);
         this.value = Math.round((this.thumbPosition / 100) * (this.max - this.min) + this.min);
-        console.log('%c MSliderComponent -> this.value', 'color: #00e600', this.value);
-        console.log('%c MSliderComponent -> this.thumbPosition', 'color: #00e600', this.thumbPosition);
 
         if (this.showTooltip) {
-            setTimeout(() => {
-                this.onThumbDragStart(event);
-            }, 100);
+            this.onThumbDragStart(event);
         }
     }
 
     onThumbDragEnd(event: CdkDragEnd): void {
         this.valueChange.emit(this.value);
-        this.showTooltip = false;
-        this.showTooltip = false;
-        this.showTooltip = false;
-        this.showTooltip = false;
-        this.showTooltip = false;
-        this.showTooltip = false;
-        this.showTooltip = false;
     }
 }
