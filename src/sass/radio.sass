@@ -35,7 +35,7 @@ input[type="radio"]
         font-weight: normal
         font-family: 'Material Symbols Outlined'
         content: "radio_button_unchecked"
-        color: $border-color
+        color: $secondary-color-hover
         font-size: 24px
 
     &:hover
@@ -46,10 +46,10 @@ input[type="radio"]
     &:checked
         &::after
             content: "radio_button_checked"
-            color: $secondary-color
+            color: $primary-color
 
     &:disabled
         cursor: not-allowed
         pointer-events: none
         &::after
-            color: #9D9C8C
+            color: $text-color

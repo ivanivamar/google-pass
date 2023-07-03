@@ -16,6 +16,7 @@ export class NoteModalComponent implements OnInit {
 
     title: string = 'Add Note';
     showNote: boolean = false;
+    showMore: boolean = false;
 
     notesTabs: Tab[] = [
         {

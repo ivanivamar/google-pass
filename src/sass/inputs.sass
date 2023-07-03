@@ -2,7 +2,7 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 textarea
-    border: 2px solid #2A384B
+    border: 2px solid $border-color
     border-radius: 4px
     padding: 12px 16px
     font-size: 16px
@@ -76,7 +76,7 @@ label
         margin: 0
         cursor: pointer
         overflow: hidden
-        border: 2px solid #60A5FA
+        border: 2px solid $primary-color
         border-radius: 50%
         z-index: 2
 
@@ -93,14 +93,14 @@ label
     &:hover
         .outline
             .outline-tick
-                background: #60A5FA
+                background: $primary-color
                 opacity: .8
 
     &.is-checked
         .outline
 
             .outline-tick
-                background: #60A5FA
+                background: $primary-color
 
 .custom-file[type="file"]
     color: transparent
@@ -119,50 +119,121 @@ label
         left: 0
         transform: translate(2px, -50%)
 
-.p-calendar
-    width: 100%
-    border-bottom: 1px solid transparent !important
-
-    &:hover
-        border-bottom: 1px solid $text-secondary !important
-
-.p-calendar .p-inputtext
-    border: 0
-    padding: 0
-    outline: none !important
-    border-radius: 0
-
-    &:enabled:focus
-        border: 0
-        outline: none !important
-        box-shadow: none !important
-
-.p-calendar .p-datepicker-trigger
+// Input text field:
+.input-container
     background-color: transparent
-    border: 0
-    color: $text-color !important
-    width: 35px !important
+    border: 1px solid $border-color
+    padding: 8px 12px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    border-radius: 8px
+    height: 32px
+    transition: all 0.2s ease-in-out
 
-    &:hover
-        background-color: transparent !important
-        border: 0
-        color: black !important
+    &:disabled
+        opacity: 0.5
+        cursor: not-allowed
+        pointer-events: none
 
-p-calendar.p-calendar-clearable .p-calendar-clear-icon
-    right: 2.75rem !important
+    .input-text-container
+        display: flex
+        width: 100%
+        position: relative
 
-.p-multiselect,
-.p-dropdown
-    border: 0 !important
-    outline: none !important
-    border-radius: 0 !important
-    background: transparent !important
-    box-shadow: none !important
-    border-bottom: 1px solid transparent !important
+        i
+            color: $text-color
+            font-size: 20px
 
-    &:hover
-        border-bottom: 1px solid $text-secondary !important
+        .floating-label
+            color: $text-color
+            font-family: 'Readex Pro', sans-serif
+            font-size: 14px
+            font-weight: 500
+            transition: all 0.2s ease-in-out
+            margin-bottom: 0
+            position: absolute
+            top: 50%
+            left: 30px
+            transform: translateY(-50%)
+            transition: all 0.2s ease-in-out
+            z-index: 0
 
-.p-dropdown-panel .p-dropdown-items .p-dropdown-item
-    padding: 12px 24px !important
-    border-bottom: 1px solid #E9EAEE !important
+            .required-asterisk
+                color: #DC2626
+                font-size: 16px
+
+        input
+            padding: 0
+            border: 0
+            color: $text-color
+            background-color: transparent
+            font-size: 14px
+            font-weight: 400
+            line-height: 20px
+            letter-spacing: 0.25px
+            transition: all 0.2s ease-in-out
+            font-family: 'Readex Pro', sans-serif
+            z-index: 1
+
+            &::placeholder
+                color: $text-color
+
+        .input-actions
+            button
+                background-color: transparent
+                height: 24px
+                width: 24px
+
+                i
+                    font-size: 16px
+                    color: $text-color
+                    font-weight: bold
+
+    &.active
+        border-color: $primary-color
+        border-width: 2px
+
+        .floating-label
+            transform: translate(-28px,-38px)!important
+            font-size: 11px!important
+            background-color: $bg-color
+            padding: 4px
+
+    &.error
+        border-color: #DC2626
+
+        .floating-label
+            color: #DC2626 !important
+
+.input-helpers
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 4px 16px
+
+    &.error
+        .helper-text
+            color: #DC2626
+
+    .helper-text
+        color: $text-color
+        font-size: 12px
+        font-weight: 400
+        line-height: 16px
+        letter-spacing: 0.4px
+        font-family: monospace, sans-serif
+
+    .counter-container
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        gap: 4px
+
+        .counter-text
+            color: $text-color
+            font-size: 12px
+            font-weight: 400
+            line-height: 16px
+            letter-spacing: 0.4px
+            font-family: monospace, sans-serif

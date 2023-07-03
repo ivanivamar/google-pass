@@ -1,4 +1,4 @@
-<div class="flex flex-column absolute top-0 left-0 dialog dialog-animation" style="z-index: 999999">
+<div class="flex flex-column absolute top-0 left-0 dialog dialog-animation bg-white" style="z-index: 999999">
     <header class="pt-2 flex flex-column">
         <div class="flex align-items-center justify-content-between px-2">
             <div class="flex align-items-center gap-2">
@@ -8,9 +8,24 @@
                 <input class="text-lg fw-bold" [(ngModel)]="note.name" placeholder="Title..." />
             </div>
 
-            <button class="icon-btn text-btn" *ngIf="note.id" (click)="delete()">
-                <span class="material-symbols-outlined">delete</span>
-            </button>
+            <div class="flex align-items-center gap-2">
+                <button class="btn filled-btn" Ripple (click)="save()">
+                    Save
+                </button>
+
+                <div class="dropdown-menu" [class.expanded]="showMore">
+                    <div class="dropbtn" Ripple (click)="showMore = !showMore">
+                        <i class="material-symbols-outlined">more_vert</i>
+                    </div>
+
+                    <div class="dropdown-content">
+                        <div class="dropdown-item" Ripple *ngIf="note.id" (click)="delete()">
+                            <i class="material-symbols-outlined">delete</i>
+                            Delete
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <tabs [items]="notesTabs" (tabChanged)="tab = $event"></tabs>
@@ -26,8 +41,8 @@
                 </div>
             </div>
             <div *ngSwitchDefault>
-                <m-dropdown [options]="notesColors" [(value)]="note.color" [placeholder]="'Select a color'" [returnValue]="true"
-                (valueChange)="note.color = $event"></m-dropdown>
+                <m-dropdown [options]="notesColors" [(value)]="note.color" [placeholder]="'Select a color'"
+                    [returnValue]="true" (valueChange)="note.color = $event"></m-dropdown>
             </div>
         </div>
 

@@ -18,6 +18,7 @@ export class PasswordModalComponent implements OnInit {
 
     title: string = 'Add Password';
     showPassword: boolean = false;
+    showMore: boolean = false;
 
     showGenerator: boolean = false;
 

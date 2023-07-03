@@ -2,8 +2,12 @@ export interface User {
     id: string;
     username: string;
     email: string;
+    phone: string;
     password: string;
     image: string;
+    direction: Direction[];
+
+
     createdAt: string;
     updatedAt: string;
     passwords: Password[];
@@ -11,6 +15,16 @@ export interface User {
     creditCards: CreditCard[];
     settings: Setting[];
     userId: string;
+}
+
+export interface Direction {
+    address: string;
+    city: string;
+    state: string;
+    country: string;
+    zipCode: string;
+    createdAt: string;
+    updatedAt: string;
 }
 
 export interface Password {

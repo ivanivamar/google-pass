@@ -73,7 +73,9 @@ export class GeneratorComponent implements OnInit {
             this.loading = false;
         }
 
-        this.generatePassword();
+        if (!this.fromPasswordModal) {
+            this.generatePassword();
+        }
     }
 
     generatePassword(): void {

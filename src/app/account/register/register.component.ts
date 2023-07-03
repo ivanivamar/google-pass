@@ -51,6 +51,8 @@ export class RegisterComponent {
                 passwords: [],
                 notes: [],
                 creditCards: [],
+                direction: [],
+                phone: '',
                 settings: [
                     {
                         theme: 'light',

@@ -131,7 +131,7 @@
 
     &.filled-btn
         background-color: $primary-color
-        color: $text-color
+        color: #000
 
         &:hover
             background-color: $primary-color-hover
@@ -161,7 +161,7 @@
 
     &.outlined-btn
         background-color: transparent
-        border: 1px solid $primary-color
+        border: 1px solid $border-color
         color: $primary-color
 
         &:hover
@@ -175,7 +175,7 @@
             cursor: not-allowed
 
     &.elevated-btn
-        background-color: #fff
+        background-color: inherit
         color: $primary-color
         box-shadow: 0px 1px 3px 1px #00000026, 0px 1px 2px 0px #0000004D
 
@@ -191,7 +191,7 @@
 
     &.text-btn
         background-color: transparent
-        color: black
+        color: $primary-color
 
         &:hover
             background-color: $secondary-color
@@ -202,11 +202,6 @@
         &:disabled
             opacity: 0.5
             cursor: not-allowed
-
-$fab-primary-container: #E8E970
-$fab-primary-hover: #f3f38a
-$fab-primary-active: #e8e970
-$fab-on-primary-container: #000000
 
 .fab
     border: 0
@@ -225,18 +220,18 @@ $fab-on-primary-container: #000000
     justify-content: center
     height: 56px
     width: 56px
-    background-color: $fab-primary-container
-    color: $fab-on-primary-container
+    background-color: $primary-color
+    color: #000
     position: absolute !important
     bottom: 88px
     right: 16px
     box-shadow: 0px 1px 3px 1px #00000026, 0px 1px 2px 0px #0000004D
 
     &:hover
-        background-color: $fab-primary-hover
+        background-color: $primary-color-hover
 
     &:active
-        background-color: $fab-primary-active
+        background-color: $primary-color-active
 
     &:disabled
         opacity: 0.5
@@ -276,18 +271,18 @@ $fab-on-primary-container: #000000
     justify-content: center
     height: 56px
     width: 168px
-    background-color: $fab-primary-container
-    color: $fab-on-primary-container
+    background-color: $primary-color
+    color: #000
     box-shadow: 0px 2px 6px 2px #00000026, 0px 1px 2px 0px #0000004D
     position: absolute !important
     bottom: 88px
     right: 16px
 
     &:hover
-        background-color: $fab-primary-hover
+        background-color: $primary-color-hover
 
     &:active
-        background-color: $fab-primary-active
+        background-color: $primary-color-active
 
     &:disabled
         opacity: 0.5
@@ -320,7 +315,7 @@ $fab-on-primary-container: #000000
 
     &.filled-btn
         background-color: $primary-color
-        color: white
+        color: #000
 
         &:hover
             background-color: $primary-color-hover
@@ -381,6 +376,9 @@ $fab-on-primary-container: #000000
     &.text-btn
         background-color: transparent
         color: $text-color
+
+        &.primary-btn
+            color: $primary-color
 
         &:hover
             background-color: $secondary-color-hover

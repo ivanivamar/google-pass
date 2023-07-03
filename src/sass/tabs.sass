@@ -1,11 +1,10 @@
-$tab-primary-color: #616200
-
 .tab-container
     display: flex
     align-items: center
     justify-content: center
     gap: 8px
-    border-bottom: 1px solid #7D7C6D
+    border-bottom: 1px solid $border-color
+    outline: #241E1B solid 1px
 
     .tab
         display: flex
@@ -38,17 +37,17 @@ $tab-primary-color: #616200
                 transform: translateX(-50%)
                 width: 0
                 height: 4px
-                background-color: $tab-primary-color
+                background-color: $primary-color
                 transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1)
                 transform-origin: center
                 border-top-left-radius: 4px
                 border-top-right-radius: 4px
 
         &:hover
-            background-color: $secondary-color-hover
+            background-color: $secondary-color
 
         &:hover, &.active
-            color: $tab-primary-color
+            color: $primary-color
             font-weight: 600
 
         &.active

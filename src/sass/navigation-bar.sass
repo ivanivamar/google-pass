@@ -1,12 +1,11 @@
 nav
-    background-color: $bg-color
+    background-color: $bg-secondary
     display: flex
     align-items: center
     justify-content: space-evenly
     gap: 8px
     width: 100%
-    padding: 16px 0
-    padding-top: 12px
+    padding: 8px 0 16px
 
     position: fixed
     bottom: 0
@@ -21,7 +20,7 @@ nav
         justify-content: center
         flex-direction: column
         gap: 4px
-        color: $text-color
+        color: $primary-color
         text-decoration: none !important
         border: 0 !important
 
@@ -48,7 +47,7 @@ nav
                 transition-property: transform,opacity
                 transition-timing-function: linear
                 border-radius: 100px
-                background: $secondary-color
+                background: #5C4032
                 content: ""
                 z-index: -1
 
@@ -63,7 +62,7 @@ nav
         &:hover,
         &.active
             i
-                color: black
+                color: $primary-color
                 font-variation-settings: "FILL" 1,"wght" 400,"opsz" 24
 
                 &::before
@@ -71,5 +70,5 @@ nav
                     transform: scaleX(1)
 
             span
-                color: black
+                color: $primary-color
                 font-variation-settings: "GRAD" 125
